@@ -1,6 +1,3 @@
-//let's start by making the source model class so
-// it will be easier to parse the Json
-
 class Source {
   String id;
   String name;

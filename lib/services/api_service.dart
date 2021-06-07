@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:news_api/model/article_model.dart';
 import 'package:http/http.dart';
 
@@ -15,7 +14,7 @@ class ApiService {
   //NOTE: make sure to use your OWN apikey, you can make a free acount and
   // choose a developer option it's FREE
   final endPointUrl =
-      "http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey={ADD YOUR API KEY HERE}";
+      "http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=14400f44e4674d39bc24eaa3cc77e880";
 
   //Now let's create the http request function
   // but first let's import the http package

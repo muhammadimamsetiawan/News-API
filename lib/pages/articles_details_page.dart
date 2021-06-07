@@ -1,15 +1,63 @@
-//let's start by making the source model class so
-// it will be easier to parse the Json
+import 'package:news_api/model/article_model.dart';
+import 'package:flutter/material.dart';
 
-class Source {
-  String id;
-  String name;
+class ArticlePage extends StatelessWidget {
+  final Article article;
 
-  //Let's create the constructor
-  Source({this.id, this.name});
+  ArticlePage({this.article});
 
-  //Let's create the factory function to map the json
-  factory Source.fromJson(Map<String, dynamic> json) {
-    return Source(id: json['id'], name: json['name']);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(article.title),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 200.0,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                //let's add the height
+
+                image: DecorationImage(
+                    image: NetworkImage(article.urlToImage), fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+            SizedBox(
+              height: 8.0,
+            ),
+            Container(
+              padding: EdgeInsets.all(6.0),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              child: Text(
+                article.source.name,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 8.0,
+            ),
+            Text(
+              article.description,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16.0,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

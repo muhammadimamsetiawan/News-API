@@ -1,5 +1,5 @@
 import 'package:news_api/model/article_model.dart';
-import 'package:news_api/pages/articles_details_page.dart';
+import 'package:news_api/page/articles_details_page.dart';
 import 'package:flutter/material.dart';
 
 Widget customListTile(Article article, BuildContext context) {
